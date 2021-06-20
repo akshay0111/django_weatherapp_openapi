@@ -1,0 +1,59 @@
+{% extends "weather/base.html" %}
+
+{% block body %}
+<div class="full-body">
+
+
+<form class="center-column"  method="get" >
+  <input class="form-control" placeholder="Search" name="city" ><br>
+  <button class="btn" type="submit" name="button">Search</button>
+
+</form>
+
+	<div class="container">
+
+		 <div class="mid">
+		 	<div class="corner_text">
+		 		<p>N</p>
+		 		<p>W</p>
+		 		<p>E</p>
+		 		<p>S</p>
+		 		<p>|</p>
+		 		<p>|</p>
+		 		<p>|</p>
+		 		<p>|</p>
+		 	</div>
+		 	</div>
+		 	<div class="data">
+		 		<div class="cel">
+		 			<h3>{{data.city}}</h3>
+		 			<p class="date"></p>
+		 			<p>Temperature<span>{{data.temperature}}°</span></p>
+		 		</div>
+		 		<div class="max_min">
+		 			<div class="max">
+		 				<p>Max <span>{{data.max_temperature}}°</span> </p>
+		 				<hr>
+		 				<p>Humidity <span>{{data.humidity}}%</span></p>
+		 			</div>
+		 			<div class="cloud">
+		 				<img src="https://openweathermap.org/img/wn/{{data.icon}}.png" alt="">
+		 			</div>
+		 			<div class="min">
+		 				<p>Min <span>{{data.min_temperature}}°</span> </p>
+		 				<hr>
+		 				<p>Pressure <span>{{data.pressure}}hPa</span></p>
+		 			</div>
+		 		</div>
+
+		 		<div class="bottom">
+		 			<p>General</p>
+		 			<p>{{data.description}}</p>
+
+		 		</div>
+		 </div>
+	</div>
+
+</div>
+
+{% endblock body %}
